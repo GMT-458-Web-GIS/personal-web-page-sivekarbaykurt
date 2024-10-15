@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobilerim - Şivekar Baykurt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="museum-bg">
+    <div class="header">
+        <h1>Hobilerim ve Gezdiğim Yerler</h1>
+    </div>
+
+    <div class="content">
+        <div style="text-align: center;">
+            <div class="hobby-box" onclick="toggleHobbies()">
+                <h2>Hobilerim</h2>
+            </div>
+            <div id="hobbiesList" style="display: none;">
+                <div class="hobby-item" onclick="toggleHobbyDetails('readingDetails')">
+                    <h3>Kitap Okumak</h3>
+                </div>
+                <div id="readingDetails" class="hobby-details" style="display: none;">
+                    <p>Favori kitaplarım arasında psikolojik ve polisiye romanlar var.</p>
+                </div>
+
+                <div class="hobby-item" onclick="toggleHobbyDetails('explorationDetails')">
+                    <h3>Tarihi Yerleri Keşfetmek</h3>
+                </div>
+                <div id="explorationDetails" class="hobby-details" style="display: none;">
+                    <p>Tarihi yerleri ziyaret etmek, kültürel mirası anlamak için harika bir yol.</p>
+                </div>
+
+                <div class="hobby-item" onclick="toggleHobbyDetails('meditationDetails')">
+                    <h3>Meditasyon</h3>
+                </div>
+                <div id="meditationDetails" class="hobby-details" style="display: none;">
+                    <p>Meditasyon, zihinsel dinginlik ve farkındalık sağlamak için mükemmel bir yöntem.</p>
+                </div>
+
+                <div class="hobby-item" onclick="toggleHobbyDetails('artDetails')">
+                    <h3>Resim Yapma</h3>
+                </div>
+                <div id="artDetails" class="hobby-details" style="display: none;">
+                    <p>Resim yapma, duygularımı ifade etmenin ve yaratıcılığımı geliştirmenin bir yolu.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-category" onclick="toggleSection('placesSection')">
+            <h2>Gezdiğim Yerler</h2>
+        </div>
+        <div id="placesSection" style="display: none;">
+            <p>Tarihi yerleri ve müzeleri gezmeyi çok severim.</p>
+            <a href="map.html" class="btn">Haritayı Gör</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Şivekar Baykurt</p>
+    </footer>
+
+    <script>
+        // Hobiler için listeyi açıp kapatmak
+        function toggleHobbies() {
+            var hobbiesList = document.getElementById('hobbiesList');
+            if (hobbiesList.style.display === "none") {
+                hobbiesList.style.display = "block";
+            } else {
+                hobbiesList.style.display = "none";
+            }
+        }
+
+        // Hobilerin detaylarını açıp kapatmak için
+        function toggleHobbyDetails(detailsId) {
+            var details = document.getElementById(detailsId);
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+
+        // Bölümleri açıp kapatmak için
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "none") {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
