@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harita - Şivekar Baykurt</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS ve JS (Harita için) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Ziyaret Ettiğim Müzeler</h1>
+    <div id="map" style="height: 500px;"></div> <!-- Harita burada yüklenecek -->
+
+    <script>
+        // OpenStreetMap Haritası
+        var map = L.map('map').setView([39.9334, 32.8597], 6); // Türkiye merkezli
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Müzeler ve ziyaret edilen yerler verileri
+        var museums = [
+            // Ankara
+            { name: "Rahmi Koç Müzesi", coords: [39.9488, 32.8540], link: "https://goo.gl/maps/Qabc123" },
+            { name: "Altın Köy Açıkhava Müzesi", coords: [40.0009, 32.7559], link: "https://goo.gl/maps/Xabc456" },
+            { name: "Ulucanlar Cezaevi Müzesi", coords: [39.9417, 32.8645], link: "https://goo.gl/maps/Yabc789" },
+            { name: "MTA Şehit Cuma Dağ Tarih Müzesi", coords: [39.9219, 32.8153], link: "https://goo.gl/maps/Abcd123" },
+            { name: "1. TBMM Kurtuluş Savaşı Müzesi", coords: [39.9362, 32.8444], link: "https://goo.gl/maps/Eabc123" },
+            { name: "2. Türkiye Büyük Millet Meclisi Müzesi", coords: [39.9362, 32.8354], link: "https://goo.gl/maps/Gabc123" },
+            { name: "CerModern", coords: [39.9329, 32.8521], link: "https://goo.gl/maps/Habc123" },
+            { name: "Ankara Devlet Resim ve Heykel Müzesi", coords: [39.9336, 32.8554], link: "https://goo.gl/maps/Iabc123" },
+            { name: "Gordion Müzesi", coords: [39.6522, 31.9951], link: "https://goo.gl/maps/Kabc123" },
+            { name: "Ziraat Bankası Müzesi", coords: [39.9312, 32.8544], link: "https://goo.gl/maps/Labc123" },
+            { name: "İş Bankası Müzesi", coords: [39.9282, 32.8582], link: "https://goo.gl/maps/Mabc123" },
+            { name: "Alagöz Karargah Müzesi", coords: [40.1046, 32.6262], link: "https://goo.gl/maps/AlagözKarargah" },
+            { name: "Sakarya Şehitleri ve Anıtı Müzesi", coords: [40.0391, 32.6146], link: "https://goo.gl/maps/SakaryaŞehitleri" },
+            { name: "Halide Edip Adıvar Milli Mücadele Kadınları Müzesi", coords: [39.9333, 32.8597], link: "https://goo.gl/maps/HalideEdipAdıvarMüze" },
+
+            // Eskişehir
+            { name: "Büyükşehir Belediyesi Çağdaş Cam Müzesi", coords: [39.7694, 30.5215], link: "https://goo.gl/maps/Nabc123" },
+            { name: "Eskişehir Balmumu Müzesi", coords: [39.7767, 30.5241], link: "https://goo.gl/maps/Oabc123" },
+
+            // Konya
+            { name: "Mevlana Müzesi", coords: [37.8707, 32.5040], link: "https://goo.gl/maps/Mevlana" },
+            { name: "Konya Bilim Merkezi", coords: [37.9542, 32.4844], link: "https://goo.gl/maps/KonyaBilim" },
+            { name: "İnce Minare Müzesi", coords: [37.8722, 32.4904], link: "https://goo.gl/maps/İnceMinare" },
+            { name: "Karatay Medresesi Müzesi", coords: [37.8721, 32.4864], link: "https://goo.gl/maps/Karatay" },
+
+            // Antalya
+            { name: "Düden Şelalesi", coords: [36.9071, 30.7261], link: "https://goo.gl/maps/DüdenŞelalesi" }
+        ];
+
+        // Müzeleri ve yerleri haritaya ekleme
+        museums.forEach(function(museum) {
+            L.marker(museum.coords).addTo(map)
+                .bindPopup('<a href="' + museum.link + '" target="_blank">' + museum.name + '</a>');
+        });
+    </script>
+</body>
+</html>
+
+
