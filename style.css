@@ -6,7 +6,7 @@ body {
 
 /* Uzay temalı arka plan için */
 .space-bg {
-    background-image: url('wallpaperflare.com_wallpaper (3).jpg'); /* Bilgisayarındaki uzay görselini kullan */
+    background-image: ('wallpaperflare.com_wallpaper (3).jpg'); /* Bilgisayarındaki uzay görselini kullan */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -14,7 +14,7 @@ body {
 
 /* Müze temalı arka plan için */
 .museum-bg {
-    background-image: url('images/wallpaperflare.com_wallpaper (6).jpg'); /* Bilgisayarındaki müze görselini kullan */
+    background-image: ('images/wallpaperflare.com_wallpaper (6).jpg'); /* Bilgisayarındaki müze görselini kullan */
     background-size: cover;
     background-position: center;
     height: 100vh;
