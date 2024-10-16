@@ -277,7 +277,7 @@ footer {
 
 
 .space-bg {
-    background-image: ('images/wallpaperflare.com_wallpaper (6).jpg'); /* Burada resmin yolunu belirt */
+    background-image: ('wallpaperflare.com_wallpaper (6).jpg'); /* Burada resmin yolunu belirt */
     background-size: cover; /* Resmi tam olarak kaplayacak şekilde ayarla */
     background-position: center; /* Resmi merkeze hizala */
     background-repeat: no-repeat; /* Resmi tekrar etme */
@@ -499,7 +499,7 @@ body {
 
 /* Müze temalı arka plan */
 .museum-bg {
-    background-image: ('images/wallpaperflare.com_wallpaper (6).jpg');
+    background-image: ('wallpaperflare.com_wallpaper (6).jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
